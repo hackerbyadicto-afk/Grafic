@@ -10,12 +10,7 @@ def draw(n):
     plt.axvline(0)
     x=np.array(x)
     n=eval(n,{"x":x,"np":np})
-    plt.plot(x,n,marker=".",ms=20,mfc="red")
-    cursor=mplcursors.cursor(hover=True)
-    @cursor.connect("add")
-    def on_add(sel):
-        x_val,y_val=sel.target
-        sel.annotation.set_text(f"X:{x_val:.0f}\nY: {y_val:.0f}")
+    plt.plot(x,n,lw=3,marker=".",ms=5,mfc="red",markevery=100)
     plt.grid()
     return plt.gcf()
 gr.Interface(fn=draw,inputs=gr.Textbox(label="Enter your Function : "),outputs=gr.Plot(label="Grafic")).launch(server_name="0.0.0.0",server_port=int(os.environ.get("PORT",7860)))
