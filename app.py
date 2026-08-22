@@ -17,4 +17,4 @@ def draw(n):
         sel.annotation.set_text(f"X:{x_val:.0f}\nY: {y_val:.0f}")
     plt.grid()
     return plt.gcf()
-gr.Interface(fn=draw,inputs=gr.Textbox(label="Enter your Function : "),outputs=gr.Plot("Grafic")).launch()
+gr.Interface(fn=draw,inputs=gr.Textbox(label="Enter your Function : "),outputs=gr.Plot(label="Grafic")).launch()
