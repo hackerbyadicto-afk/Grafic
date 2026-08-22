@@ -9,7 +9,7 @@ def draw(n):
     plt.axvline(0)
     x=np.array(x)
     n=eval(n,{"x":x,"np":np})
-plt.plot(x,n,marker=".",ms=20,mfc="red")
+    plt.plot(x,n,marker=".",ms=20,mfc="red")
     cursor=mplcursors.cursor(hover=True)
     @cursor.connect("add")
     def on_add(sel):
