@@ -3,6 +3,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 import math
 import mplcursors
+import os
 def draw(n):
     x=np.linspace(-100,100,2000)
     plt.axhline(0)
@@ -17,4 +18,4 @@ def draw(n):
         sel.annotation.set_text(f"X:{x_val:.0f}\nY: {y_val:.0f}")
     plt.grid()
     return plt.gcf()
-gr.Interface(fn=draw,inputs=gr.Textbox(label="Enter your Function : "),outputs=gr.Plot(label="Grafic")).launch()
+gr.Interface(fn=draw,inputs=gr.Textbox(label="Enter your Function : "),outputs=gr.Plot(label="Grafic")).launch(server_name="0.0.0.0",server_port=int(os.environ.get("PORT",7860)))
