@@ -2,7 +2,6 @@ import gradio as gr
 from matplotlib import pyplot as plt
 import numpy as np
 import math
-import mplcursors
 import os
 def draw(n):
     x=np.linspace(-100,100,2000)
